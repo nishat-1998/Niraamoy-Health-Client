@@ -10,31 +10,33 @@ import {
 
 
 import Home from './Components/Home/Home';
-import Header from './Components/Header/Header';
+//import Header from './Components/Header/Header';
 import CheckOut from './Components/CheckOut/CheckOut';
+//import Headers from './Components/Headers/Headers';
+//import Sidebar from './Components/SharedComponent/Sidebar/SideBar';
 function App() {
 
 
 
   return (
-    <div className="container">
-     <Router>
-       <Header/>
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/checkOut/:productId">
-              <CheckOut/>
+    
+    <Router>
+    
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/checkOut/:productId">
+            
             </Route>
           <Route exact path="/">
-              <Home />
-            </Route>
-        </Switch>
+            <Home />
+          </Route>
+      </Switch>
+    
+  </Router>
       
-    </Router>
-      
-    </div>
+    
   );
 }
 

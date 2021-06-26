@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Container, Spinner, Table } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
 import './CheckOut.css';
+import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment';
-
+//import Map from './Map';
 
 const Checkout = () => {
 
@@ -43,34 +44,9 @@ const Checkout = () => {
 
 
     return (
-        <div>      
-            <Container>
-                <h3 className="section-heading bg-dark text-center text-white"><span><FontAwesomeIcon icon={faShoppingBag} /></span> CheckOut</h3>
-                <div className="table">
-                    <Table responsive>
-                        <thead>
-                            <tr>
+<div>
     
-                                <th>Description</th> 
-                                <th>Group</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        {checkOut && (<tbody>
-                            <tr>
-                              
-                                <td style={{fontSize:'23px', fontWeight: '600'}}>{checkOut.name}</td>
-                                <td style={{color:'green'}}>{checkOut.group}</td>
-                                <td style={{color:'red'}}>{checkOut.quantity}</td>
-                                <td style={{color:'red'}}>{checkOut.seeling}</td>
-                            </tr>
-                        </tbody>)}
-                    </Table>
-                    <button onClick={() => handleCheckOut()} className="order-btn" type="submit">Place Order</button>
-                </div>
-            </Container>
-        </div>
+</div>
     );
 };
 

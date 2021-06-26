@@ -2,3 +2,8 @@
     box-sizing: border-box;
     box-shadow: 10px 10px 40px gray;
 }
+.cart-controller .btn{
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0 10px !important;
+}

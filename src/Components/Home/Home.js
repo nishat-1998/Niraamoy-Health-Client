@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form, FormControl, Spinner } from "react-bootstrap";
+import Header from "../Header/Header";
 import Product from "../Product/Product";
+import Sidebar from "../SharedComponent/Sidebar/SideBar";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
 
+  
+const containerStyle = {
+  backgroundColor: "#F4FDFB",
+  height:"100%"
+}
   useEffect(() => {
-    fetch("https://immense-depths-47841.herokuapp.com/products")
+    fetch("http://localhost:5055/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
 
   return (
-    <div>
-      <div className="text-center">
-        <div className="d-flex justify-content-center align-items-center">
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form>
-        </div>
-        
-      </div>
+    <section>
+   <div className="col-md-12">
+     <Header/>
+   </div>
+    <div style={containerStyle} className="container-fluid row">
+                <div className="col-md-2">
+              <Sidebar/>
+             </div>
+      <div className="col-md-10 p-4 pr-5">
+       
+  
       {products.length <= 0 && (
         <div
           style={{ height: "300px" }}
@@ -37,7 +45,9 @@ const Home = () => {
           <Product product={product}></Product>
         ))}
       </div>
-    </div>
+      </div>
+      </div>
+      </section>
   );
 };
 
